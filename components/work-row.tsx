@@ -1,4 +1,5 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import type { Project } from "@/content/projects/projects";
 
 export function WorkRow({ project }: { project: Project }) {
@@ -34,12 +35,10 @@ export function WorkRow({ project }: { project: Project }) {
             </span>
           ))}
         </div>
-        {project.href && (
-          <ArrowUpRight
-            size={18}
-            className="text-muted transition-colors group-hover:text-accent"
-          />
-        )}
+        <ArrowRight
+          size={18}
+          className="text-muted transition-colors group-hover:text-accent"
+        />
       </div>
     </>
   );
@@ -47,20 +46,12 @@ export function WorkRow({ project }: { project: Project }) {
   const rowClass =
     "group flex flex-col gap-4 border-b border-line py-8 transition-colors sm:flex-row sm:items-center sm:justify-between";
 
-  if (project.href) {
-    const external = project.href.startsWith("http");
-    return (
-      <a
-        href={project.href}
-        className={`${rowClass} hover:border-accent/40`}
-        {...(external
-          ? { target: "_blank", rel: "noopener noreferrer" }
-          : {})}
-      >
-        {inner}
-      </a>
-    );
-  }
-
-  return <div className={rowClass}>{inner}</div>;
+  return (
+    <Link
+      href={`/portfolio/${project.slug}`}
+      className={`${rowClass} hover:border-accent/40`}
+    >
+      {inner}
+    </Link>
+  );
 }

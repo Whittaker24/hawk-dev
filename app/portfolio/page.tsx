@@ -5,7 +5,7 @@ import { portfolioProjects } from "@/content/projects/projects";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Products I build and run under iHawk Labs: QR gift claims, a multi-vendor marketplace, and an AI assistant for Medusa stores.",
+    "Products I build and run under iHawk Labs, and client work: QR gift claims, a multi-vendor marketplace, an AI store assistant and more.",
 };
 
 export default function PortfolioPage() {
