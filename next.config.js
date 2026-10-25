@@ -1,4 +1,6 @@
 module.exports = {
+  // There's a stray lockfile in the parent folder; build from this repo only.
+  turbopack: { root: __dirname },
   images: {
     remotePatterns: [
       {
@@ -7,14 +9,5 @@ module.exports = {
         port: "",
       },
     ],
-  },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
-    });
-
-    return config;
   },
 };

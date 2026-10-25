@@ -81,7 +81,7 @@ export function MarkdownPages({ content }: MarkdownPagesProps) {
               if (typeof child === "string") {
                 codeContent += child;
               } else if (
-                React.isValidElement(child) &&
+                React.isValidElement<{ children?: React.ReactNode }>(child) &&
                 typeof child.props.children === "string"
               ) {
                 codeContent += child.props.children;
