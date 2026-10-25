@@ -11,44 +11,34 @@ export type Project = {
 
 export const portfolioProjects: Project[] = [
   {
-    title: "Ecommerce platform",
-    client: "Placeholder",
-    year: "—",
+    title: "QR Claims",
+    client: "iHawk Labs",
+    year: "2026",
     outcome:
-      "Custom storefronts and ops dashboards for B2B and B2C — catalog, checkout, and the tools behind them.",
-    stack: ["Next.js", "TypeScript", "Commerce"],
+      "QR gift claims for online sellers — customers scan the insert card in their parcel, claim a free gift, and staff work every claim from one back office with emails built in.",
+    stack: ["Next.js", "Postgres", "Cloudflare"],
+    href: "https://ihawklabs.com",
     featured: true,
-    placeholder: true,
   },
   {
-    title: "AI agent / chatbot",
-    client: "Placeholder",
-    year: "—",
+    title: "Multi-vendor marketplace",
+    client: "iHawk Labs",
+    year: "2026",
     outcome:
-      "A product-embedded assistant for support or internal tools — wired into real workflows, not a standalone demo.",
-    stack: ["AI agents", "Chat", "APIs"],
+      "A marketplace where sellers list their own products and get paid out, while the owner runs the storefront.",
+    stack: ["Medusa", "Mercur", "Next.js"],
+    href: "https://my-mercurjs-store-storefront.vercel.app/",
     featured: true,
-    placeholder: true,
   },
   {
-    title: "Product platform",
-    client: "Placeholder",
-    year: "—",
+    title: "Medusa Assistant",
+    client: "iHawk Labs",
+    year: "2026",
     outcome:
-      "A fullstack app from the first screen through the API and data layer, built to stay maintainable after launch.",
-    stack: ["React", "Node", "Postgres"],
+      "An AI assistant for the store admin — ask about orders, products and customers in plain English and get answers from the store's own data.",
+    stack: ["AI agents", "Medusa", "TypeScript"],
+    href: "https://medusa-assistant.vercel.app/",
     featured: true,
-    placeholder: true,
-  },
-  {
-    title: "Delivery / ops tool",
-    client: "Placeholder",
-    year: "—",
-    outcome:
-      "An internal system taken from brief to release — scoped with stakeholders and shipped for the team that runs it.",
-    stack: ["Admin", "Delivery"],
-    featured: true,
-    placeholder: true,
   },
 ];
 

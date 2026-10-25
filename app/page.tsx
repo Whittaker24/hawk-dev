@@ -58,10 +58,7 @@ export default function Home() {
           </h2>
           <div className="mt-12 grid gap-px bg-line sm:grid-cols-2">
             {deliverables.map((item) => (
-              <article
-                key={item.title}
-                className="bg-canvas p-6 sm:p-8"
-              >
+              <article key={item.title} className="bg-canvas p-6 sm:p-8">
                 <h3 className="text-lg font-medium text-ink">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
                   {item.body}
@@ -80,7 +77,7 @@ export default function Home() {
                 Selected work
               </p>
               <h2 className="mt-3 text-2xl font-medium tracking-tight sm:text-3xl">
-                Case studies updating.
+                Products I build and run.
               </h2>
             </div>
             <Link
@@ -153,8 +150,7 @@ export default function Home() {
             Have a product, a store, or an agent to ship?
           </h2>
           <p className="mt-4 max-w-xl text-muted">
-            I take work from brief to something a team can run.{" "}
-            {site.location}.
+            I take work from brief to something a team can run. {site.location}.
           </p>
           <Link
             href="/contact"
