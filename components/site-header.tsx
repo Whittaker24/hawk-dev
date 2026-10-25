@@ -3,17 +3,15 @@
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { navLinks, site } from "@/lib/site";
 import { Nav, NavLink } from "@/components/nav";
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  // The page the menu was opened on; navigating anywhere else closes it.
+  const [openOn, setOpenOn] = useState<string | null>(null);
+  const open = openOn === pathname;
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-canvas/80 backdrop-blur-md">
@@ -36,7 +34,7 @@ export function SiteHeader() {
           className="inline-flex h-10 w-10 items-center justify-center text-ink md:hidden"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
+          onClick={() => setOpenOn(open ? null : pathname)}
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>

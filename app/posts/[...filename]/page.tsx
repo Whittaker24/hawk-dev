@@ -28,12 +28,10 @@ type Frontmatter = {
 export async function generateMetadata({
   params,
 }: {
-  params: { filename: string[] };
+  params: Promise<{ filename: string[] }>;
 }): Promise<Metadata> {
-  const filePath = path.join(
-    postsDirectory,
-    `${params.filename.join("/")}.mdx`
-  );
+  const { filename } = await params;
+  const filePath = path.join(postsDirectory, `${filename.join("/")}.mdx`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const parsedFile = matter(fileContent) as GrayMatterFile<string>;
   const frontmatter = parsedFile.data as Frontmatter;
@@ -47,12 +45,10 @@ export async function generateMetadata({
 export default async function PostPage({
   params,
 }: {
-  params: { filename: string[] };
+  params: Promise<{ filename: string[] }>;
 }) {
-  const filePath = path.join(
-    postsDirectory,
-    `${params.filename.join("/")}.mdx`
-  );
+  const { filename } = await params;
+  const filePath = path.join(postsDirectory, `${filename.join("/")}.mdx`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const parsedFile = matter(fileContent) as GrayMatterFile<string>;
   const frontmatter = parsedFile.data as Frontmatter;

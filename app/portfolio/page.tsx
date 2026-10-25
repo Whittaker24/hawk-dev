@@ -5,7 +5,7 @@ import { portfolioProjects } from "@/content/projects/projects";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected product, ecommerce, and AI work. New case studies landing soon.",
+    "Products I build and run under iHawk Labs: QR gift claims, a multi-vendor marketplace, and an AI assistant for Medusa stores.",
 };
 
 export default function PortfolioPage() {
@@ -18,9 +18,8 @@ export default function PortfolioPage() {
         Selected work
       </h1>
       <p className="mt-4 max-w-2xl text-base text-muted">
-        A new set of case studies is coming. These rows show the kinds of
-        products I ship — ecommerce, agents, platforms, and delivery tools —
-        until the live list lands.
+        Products I build and run under iHawk Labs — each one live, so you can
+        try it.
       </p>
       <div className="mt-10 border-t border-line">
         {portfolioProjects.map((project) => (
